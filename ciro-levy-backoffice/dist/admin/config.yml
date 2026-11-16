@@ -1,7 +1,7 @@
 {
   "backend": {
     "name": "github",
-    "repo": "interfin73/web-CL",
+    "repo": "cirolevymusica/web-CL",
     "branch": "main"
   },
   "locale": "es",
@@ -18,72 +18,6 @@
           "file": "ciro-levy-backoffice/content/site.json",
           "fields": [
             {
-              "name": "story_second",
-              "label": "Biografía: segundo párrafo",
-              "widget": "text",
-              "required": false
-            },
-            {
-              "name": "story_first",
-              "label": "Biografía: primer párrafo",
-              "widget": "text",
-              "required": false
-            },
-            {
-              "name": "hero_image",
-              "label": "Fotografía principal",
-              "widget": "image",
-              "required": false
-            },
-            {
-              "name": "live_text",
-              "label": "Información de conciertos",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "name": "intro",
-              "label": "Introducción",
-              "widget": "text",
-              "required": false
-            },
-            {
-              "name": "contact_text",
-              "label": "Presentación de contacto",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "name": "story_heading",
-              "label": "Título de Mi historia",
-              "widget": "text",
-              "required": false
-            },
-            {
-              "name": "live_title",
-              "label": "Mensaje de conciertos",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "name": "tagline",
-              "label": "Lema",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "name": "live_heading",
-              "label": "Título de conciertos",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "name": "music_heading",
-              "label": "Título de Música",
-              "widget": "string",
-              "required": false
-            },
-            {
               "name": "artist",
               "label": "Nombre del artista",
               "widget": "string",
@@ -92,6 +26,12 @@
             {
               "name": "brand",
               "label": "Nombre en el logotipo",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "name": "tagline",
+              "label": "Lema",
               "widget": "string",
               "required": false
             },
@@ -108,8 +48,20 @@
               "required": false
             },
             {
-              "name": "email",
-              "label": "Correo de contacto",
+              "name": "intro",
+              "label": "Introducción",
+              "widget": "text",
+              "required": false
+            },
+            {
+              "name": "hero_image",
+              "label": "Fotografía principal",
+              "widget": "image",
+              "required": false
+            },
+            {
+              "name": "music_heading",
+              "label": "Título de Música",
               "widget": "string",
               "required": false
             },
@@ -179,6 +131,102 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "story_heading",
+              "label": "Título de Mi historia",
+              "widget": "text",
+              "required": false
+            },
+            {
+              "name": "story_first",
+              "label": "Biografía: primer párrafo",
+              "widget": "text",
+              "required": false
+            },
+            {
+              "name": "story_second",
+              "label": "Biografía: segundo párrafo",
+              "widget": "text",
+              "required": false
+            },
+            {
+              "name": "live_heading",
+              "label": "Título de conciertos",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "name": "live_title",
+              "label": "Mensaje de conciertos",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "name": "live_text",
+              "label": "Información de conciertos / mensaje sin fechas",
+              "widget": "string",
+              "required": false,
+              "hint": "Se muestra cuando no hay conciertos en la lista."
+            },
+            {
+              "name": "concerts",
+              "label": "Conciertos",
+              "widget": "list",
+              "required": false,
+              "summary": "{{fields.date}} · {{fields.venue}} · {{fields.city}}",
+              "hint": "Añade una actuación por elemento. Se mostrarán en el orden de esta lista.",
+              "fields": [
+                {
+                  "name": "date",
+                  "label": "Fecha",
+                  "widget": "datetime",
+                  "format": "YYYY-MM-DD",
+                  "date_format": "DD/MM/YYYY",
+                  "time_format": false
+                },
+                {
+                  "name": "time",
+                  "label": "Hora",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Por ejemplo: 20:30"
+                },
+                {
+                  "name": "venue",
+                  "label": "Sala o lugar",
+                  "widget": "string"
+                },
+                {
+                  "name": "city",
+                  "label": "Ciudad",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "maps_url",
+                  "label": "Enlace de Google Maps",
+                  "widget": "string",
+                  "required": false,
+                  "hint": "Abre el lugar en Google Maps, pulsa Compartir y pega el enlace HTTPS.",
+                  "pattern": [
+                    "^https://(maps\\.app\\.goo\\.gl/|goo\\.gl/maps/|maps\\.google\\.[^/]+/|(?:www\\.)?google\\.[^/]+/maps(?:/|\\?)).+",
+                    "Utiliza un enlace HTTPS de Google Maps"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "contact_text",
+              "label": "Presentación de contacto",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "name": "email",
+              "label": "Correo de contacto",
+              "widget": "string",
+              "required": false
             }
           ]
         }
